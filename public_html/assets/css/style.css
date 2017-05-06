@@ -1,0 +1,817 @@
+/*******************************************************************************
+ *********************      RESET PARAMETARA     *******************************
+********************************************************************************/
+/*#00AFEF nijansa plave boje
+#333 nijansa tamno sive
+#fff bela boja
+#000 crna boja
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+}
+
+html, body, header, aside, footer { 
+    border: 0; 
+    margin: 0; 
+    padding: 0; 
+    font-size: 100%; 
+    vertical-align: baseline; }
+
+footer, header, menu, nav, section, div { 
+    display: block;}
+
+body { 
+    line-height: 1.5; 
+    text-shadow: none; }
+ol,ul,li { 
+    list-style: none; }
+
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; } 
+
+/*image reseter za png slike*/
+/*The following will use css to set the src to a tiny transparent image which 
+solves the src attribute issue while maintaining control from image:
+content:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')
+My overall approach is to define the following in my reset.css, 
+then use a class to provide the actual image and control it. 
+This behaves just like an img, but is entirely css controlled.
+*/
+
+img {
+    display: -moz-inline-box;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    *vertical-align: auto;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+img:not([src]) {
+    content: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7');
+}
+
+/*******************************************************************************
+ *********************      GLOBALNI PARAMETARI    *****************************
+********************************************************************************/
+html { -webkit-text-size-adjust: none; }
+body { 
+    -webkit-text-size-adjust: 100%;
+    font-weight: normal;
+    margin: 0 auto;
+    background: #fff;
+    font-family: Calibri;
+    height: 100%;}
+
+.fa { 
+    -moz-osx-font-smoothing: initial;
+    color: #00AFEF; 
+    text-decoration: none; 
+    transition: all 0.3s ease-in; }
+
+p {
+    color: white;
+    font-family: Calibri;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    margin-bottom: 25px;
+    letter-spacing: 0.25px; }
+
+a { 
+    color: white; 
+    text-decoration: none; 
+    transition: all 0.3s ease-in; }
+
+a:hover { 
+    color: silver; 
+    transition: all 0.3s ease-out;
+    opacity: .5;}
+
+#a-link, #a-link:hover, #a-link:focus {
+    cursor: default;}
+
+
+h1, h2, h3, h4, h5, h6 { 
+    font-family: Calibri;
+    color: #00AFEF;
+    margin-bottom: 5px;
+    line-height: 1.5; }
+
+/*
+h1 { 
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    padding: 0px 0px 10px;
+    font-weight: 300; }
+
+h2 {
+    font-size: 10pt;
+    font-weight: bold;
+    line-height: 1.5;}
+
+h3 {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5; }
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0px 0px 5px; }
+
+
+h5 {
+    color: #00AFEF;
+    font-size: 15pt;
+    font-weight: bold;  
+}
+
+h6 {
+    color: #00AFEF; 
+    font-size: 10pt; 
+    font-weight: bold;}
+
+span {
+    letter-spacing: 2px;}
+*/
+
+
+
+
+
+
+
+/***************************************************************************/
+/********************** Stilizovanje BACK-ON-TOP linka *********************/
+/***************************************************************************/
+.bt-top {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+  /* image replacement properties */
+    overflow: hidden;
+    text-indent: 100%;
+    background: transparent url(../img/back-to-top.png) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    transition: all 0.8s ease-in;}
+
+.bt-top:hover,.bt-top:focus {
+    background: transparent url(../img/back-to-top-over.png) no-repeat center 50%;
+    transition: all 0.8s ease-out;}
+
+.bt-top.bt-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;}
+
+.bt-top.bt-fade-out {
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;}
+
+.no-touch .bt-top:hover {
+    background: transparent url(../img/back-to-top-over.png) no-repeat center 50%;;
+    transition: all 0.8s ease-out;}
+
+@media only screen and (min-width: 768px) {
+  .bt-top {
+        right: 20px;
+        bottom: 20px; }
+}
+@media only screen and (min-width: 1024px) {
+    .bt-top {
+        height: 60px;
+        width: 60px;
+        right: 30px;
+        bottom: 30px; }
+}
+/***************************************************************************/
+/***************************************************************************/
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+ ****************     PARAMETRI NAVIGACIJE I ZAGLAVLJA     *********************
+********************************************************************************/
+
+.title {                  /* tekst leve strane logo navbara */
+    float: left;
+    width: auto;
+    position: absolute;
+    top: 10px; }
+
+.title .small-logo { /* logo na navbaru prikaz normalne slika */
+    max-width: 100px;
+    max-height: 55px;
+    min-width: 95px;
+    min-height: 50px; 
+    top: 5px;
+    position: absolute;
+    background-image: url(../img/logo.png);
+    background-repeat:no-repeat;
+    transition: all 0.8s ease-in;}
+
+.title .small-logo:hover,.title .small-logo:focus { /* logo navbara link za prelaz preko slike kursorom */
+    background-image: url(../img/logo-over.png);
+    background-repeat:no-repeat;
+    transition: all 0.8s ease-out;}
+
+
+.toggle {
+    font-size: 22px;
+    position: absolute;
+    top: 22px;
+    color: #00AFEF; /*cyan*/
+    display: none; }
+
+#navigation {
+    background:#333;
+    /*width:auto!important*/
+    height: 80px;
+    margin: 0px;
+    text-align: right; }
+
+#navigation ul {
+    display: inline;
+    position: relative;
+    top: 25px;
+    margin: 0;
+    padding: 0; }
+
+#navigation li { 
+    display: inline;
+    margin: 0px 0px 0px 10px;
+    padding: 0; }
+
+#navigation li a {
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+    font-weight: 500;
+    padding: 0 5px;
+    letter-spacing: 0.3px;
+    font-family: Calibri;
+    font-size: 18px;
+    text-decoration: none;  
+    transition: all 0.3s ease-out; }
+
+#navigation li a:hover, #navigation li#active a, .menu li#active a, .menu li a:hover {
+    color: #00AFEF; /* nijansa plave boje (cyan)*/
+    transition: all 0.3s ease-out;}
+
+
+/*******************************************************************************
+ *********************      PARAMETRI SADRZAJA     *****************************
+********************************************************************************/
+
+section { 
+    padding: 40px 0; }
+
+#content {
+    height: auto !important;
+    padding: 0px;
+    margin: 0px; }
+
+#wrapper {
+    width: 75%;
+    /*max-width: 1000px;*/
+    margin: 0 auto;
+    padding: 0;
+    position: relative; }
+
+.hero { /* hero nekada*/
+    padding: 30px 0 30px 0;
+    background: #00AFEF; }
+
+.subtitle {
+    line-height: 1.8;
+    font-size: 20px;
+    color: #fff;}
+
+/*******************************************************************************
+ *********************      PARAMETRI FOOTERA     *****************************
+********************************************************************************/
+
+.flexfooter { 
+    font-family: Calibri;
+    background: #333; 
+    padding: 30px 0px 20px;
+    overflow: hidden; }
+
+.flexfooter h2 {
+    color: #00AFEF;
+    font-weight:bold;
+    font-size: 14pt;
+}
+.flexfooter h6 {
+    color: #00AFEF;
+    font-weight:bold;
+    font-size: 18pt; }
+
+.flexfooter hr {
+    border-bottom: 1px solid rgba(0, 175, 239, 0.5);/*plava niajnsa rgb*/
+    margin: 0; }
+
+.flexfooter p,.flexfooter a {
+    color: white; }
+
+.flexfooter i{
+    color: #00AFEF;
+}
+
+.flexfooter p a:hover {
+    opacity: .65;
+    padding-left: 5px;}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    clear: both;
+    margin: 35px auto;}
+
+.mascot {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.7);
+    vertical-align: top;
+    padding: 0px;
+    margin: 0;
+    float: right;
+    background-image: url(../img/big-logo.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    transition: all 0.5s ease-in;
+    width: 210px;
+    height: 120px;}
+
+.mascot:hover, .mascot:focus {
+    background-image: url(../img/big-logo-over.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    transition: all 0.5s ease-out;}
+
+.footer-icons {
+    margin-left: 15px;
+    float: right;}
+
+.social {
+    text-align: right;}
+
+.social i {
+    color:white;}
+
+.social li {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 26px;}
+
+.social:hover li a {
+    opacity: .6;}
+
+.social li a :hover {    
+    color:#00AFEF;
+    opacity: 1;}
+
+/*******************************************************************************
+ *********************      GRID PARAMETRI     *******************************
+********************************************************************************/
+
+.unit {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    float: left;
+    margin: 10px 3% 10px 0!important;}
+
+.one-of-two { 
+    width: 48.5%; }
+.one-of-three { 
+    width: 31.33%; }
+.two-of-three { 
+    width: 65.65%; }
+.one-of-four { 
+    width: 22.75%; }
+.three-of-four { 
+    width: 74.25%; }
+.one-of-five { 
+    width: 17.6%; }
+.two-of-five { 
+    width: 38.2%; }
+.three-of-five { 
+    width: 58.8%; }
+.four-of-five { 
+    width: 79.4%; }
+.last {
+    float: none!important;
+    margin-right: 0!important; }
+
+
+/*******************************************************************************
+ *********************     PARAMETRI UTISAKA TESTEMONIALA     **************************
+********************************************************************************/
+
+.testimonial-top {
+    width: auto;
+    height: auto;
+    margin: 5px 0 15px;
+}
+
+.testimonial-top p {
+    margin: 0;}
+
+.testimonial-img {
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin: 4px 10px 5px 0px;
+}
+
+.testimonial-container {
+    background: white;
+    border: 1px solid #E3E3E3;
+    padding: 15px 20px;
+    margin: 0px 0px 30px; }
+
+.testimonial-container h3 {
+    font-weight: 300;
+    font-size: 24px;}
+
+.testimonial-theme {
+    color: #BBBEBF;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Calibri !important;
+    display: block;
+    padding: 0px 0px 14px !important;
+    letter-spacing: 1px; }
+
+
+/*******************************************************************************
+ *********************      NEWS LETTERS PARAMETRI     *************************
+********************************************************************************/
+
+.newsletter-input {
+    border: 1px solid #E4E4DF;
+    background: white;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 40px;
+    outline: medium none;
+    padding: 0px 0px 0px 8px;
+    color: #6d6f71;
+    width: 70%;
+    font-family: Calibri!important;
+    -webkit-appearance: none;}
+
+.newsletter-button {
+    float: right;
+    margin-top: 0px;
+    border: medium none !important;
+    font-size: 14px;
+    width: 100px;
+    border-radius: 2px;
+    height: 38px;
+    color: white;
+    transition: all 0.3s ease-out 0s;
+    background: #349ccc;
+    font-family: Calibri!important;
+    -webkit-appearance: none;}
+
+.newsletter-button:hover {
+    background: #397692;
+    cursor: pointer;
+    transition: all 0.3s ease-out;}
+
+
+/*-----------------------------
+
+  MISC
+
+-----------------------------*/
+
+.feature_icon {
+    width: 45px;
+    height: 45px;
+    padding: 0px;
+    float: left;
+    background: #349ccc;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 22px;
+    margin: 8px auto 0;}
+
+.theme_details {
+    padding: 0 0px 0px 65px;
+    margin: 0;}
+
+.theme_details h3 {
+    margin: 0;}
+
+.browse {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #4A8000;
+    border-radius: 2px;
+    font-size: 22px;
+    color: #FFF;
+    font-weight: 300;
+    line-height: 40px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-out 0s;
+    font-family: "brandon text", sans-serif !important;
+    margin: 45px auto;
+    background-color: #70B222;}
+
+.browse:hover {
+    background:#7dc215; 
+    color: #fff;
+    transition: all 0.3s ease-out;}
+
+.featured {
+    margin-top: 15px;
+    width: 350px;
+    height: 178px;
+    margin-left: 5px;
+    border: 6px solid #fff;
+    border-radius: 2px;}
+
+.button {
+    display: inline-block;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 1;
+    color:#fff;
+    font-weight: 400;
+    text-decoration:none;
+    text-align:center;
+    background-color: #349ccc;
+    font-family: "Brandon Text", sans-serif;
+    letter-spacing: 0.3px;
+    padding: 12px 18px 14px;}
+
+.tour-button {
+    display: inline-block;
+    font-family: "Brandon Text", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background: #349ccc;
+    color: #fff;
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: all 0.3s ease-out;
+    letter-spacing: 0.3px;}
+
+.tour-button:hover, .button:hover { 
+    background: #3C7691;
+    transition: all 0.3s ease-out;}
+
+.button i, .tour-button i {
+    padding-left: 8px;
+    vertical-align: baseline;}
+
+span.label, span.spacer, span.multiple span {
+    width: 100px;
+    float: left;}
+
+span.multiple { float: left; }
+
+div.clear { clear: both; }
+
+
+
+
+.cta {
+    font-weight: 200;
+    font-size: 21px;
+    margin-top: 53px;}
+
+
+
+
+/*-----------------------------
+
+  RESPONSIVE MEDIA QUERIES
+
+-----------------------------*/
+
+
+/*--------------------
+
+  MOBILE NAV 
+
+--------------------*/
+
+#mobile, #toggle, .toggle { 
+    display:none }
+
+/*-- MOBILE MENU --*/
+@media only screen and (max-width: 900px) {
+    .toggle { 
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        font-size: 22px;
+        float: right;
+        top: 22px;
+        right: 12%;
+        z-index: 1;}
+
+    .toggle:after {
+        content: "\f0c9"; /* fa-bars unicod vrednost iz liste sadrzaja sa sajta http://fontawesome.io/icons/ (iz skupa bars) */
+        font-family: "FontAwesome"; /* fa-bars fonta FontAwesome */
+        font-size: 20px;
+        color: white;}
+    
+    #toggle:checked ~ .menu {
+        display: block;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+        margin-top: 0px;}
+
+    #toggle:checked + .toggle:after {
+        content: "\f00d"; /*  fa-times unicod vrednost iz liste sadrzaja sa sajta http://fontawesome.io/icons/ (iz skupa bars) */
+        font-family: "FontAwesome";}
+    
+    .menu { /*padajuca lista*/
+        display: none;
+        opacity: 0;
+        margin-top: 0px;
+        width: 100%;
+        position: absolute;
+        right: 0px;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+        background: white; /*boja pozadine padajuce liste*/
+        z-index: 1000001!important;}
+    
+    .menu ul {
+        position: relative;
+        display: block;
+        list-style: outside none none;
+        line-height: 2.2;
+        margin: 0px;
+        padding: 0;
+        width: 100% !important; }
+    
+    .menu ul li {
+        display: block;
+        width: 100% !important;
+        margin: 0px; }
+    
+    .menu ul li a { 
+        display: block;
+        width: 100% !important;
+        padding: 1% 6%;
+        border-top: 1px solid #ddd;
+        margin: 0;
+        font-weight: 400;
+        text-align: left;
+        letter-spacing: 0.3px;
+        font-family: Calibri;
+        font-size: 16px;
+        color: #333; } /* boja fontova unutar padajuce liste*/
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .newsletter-input {
+        width: 61%!important;  }
+}
+
+@media only screen and (max-width: 1050px) {
+    #wrapper {
+        width: 90%;  }
+}
+
+@media only screen and (max-width: 900px) {
+    .one-of-two, .one-of-three, .two-of-three, .one-of-four, .three-of-four, .one-of-five, .two-of-five, .three-of-five, .four-of-five {
+        width: 100%;  }
+    .unit {
+        margin: 0px auto!important;    }
+    .flexfooter .one-of-three {
+        display: inline-block;
+        float: left;
+        margin: 10px 3% 10px 0!important;
+        width: 31.33%;  }
+    .flexfooter .last { margin-right: 0!important; }
+    .toggle { 
+        right: 5.5%; }
+    .mascot { 
+        display: none; }
+    .social { 
+        text-align: left; }
+    .social li {
+        margin-left: 0!important;
+        margin-right: 20px;  }
+    .tour-button { 
+        margin-bottom: 30px!important; }
+    h1 { 
+        font-size: 35px;  }
+    .subtitle {
+        font-size: 18px;  }
+    .newsletter-input {
+        width: 80%!important;}
+    .cta {
+        margin: 40px 0 0;
+        font-size: 22px;
+        text-align: center; }
+    #navigation ul {
+        display: none;  }
+    .toggle {  
+        display: block; }
+}
+
+@media only screen and (max-width: 600px) {
+    .newsletter-input {
+        width: 100%!important;
+        margin-bottom: 10px; }
+    .newsletter-button {
+        float: none;  }
+    .flexfooter .one-of-three {
+        display: block;
+        float: none;
+        margin: 0!important;
+        width: 100%; }
+    .flexfooter p {
+        margin-bottom: 10px!important;}
+    .flexfooter {
+        padding: 30px 0; }
+    .flexfooter hr {
+        margin-bottom: 25px!important;  }
+}
+
+@media only screen and (max-width: 500px) {
+    .toggle { 
+        right: 6%; }
+    #wrapper {
+        width: 88%;
+        margin: 0 auto;
+        padding: 0; }
+    .title .small-logo {
+        height: 50px!important;
+        top: 13px!important; }
+}
+
+@media only screen and (max-width: 400px) {
+    .hero {
+        padding: 40px 0 20px;  }
+    .hero img { 
+        display: none;  }
+    h1 {
+        font-size: 28px;
+        line-height: 1.4; }
+    .browse {
+        margin: 20px auto; }
+    .subtitle {
+        font-size: 16px; }
+    .testimonial-img {
+        float: none;
+        margin-bottom: 10px; }
+    .testimonial-top h3 {
+        margin-bottom: 3px; }
+    .testimonial-theme {
+        padding: 0!important;
+        font-weight: 400;
+        color: #b0b3b5 }
+}
+
+

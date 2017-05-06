@@ -1,0 +1,312 @@
+/*-----------------------------------------------------------------------------
+----------------- KONTAKT STRANA STILIZACIJA ELEMENATA ------------------------
+------------------------------------------------------------------------------*/
+/*        Created on : May 5, 2017, 10:50:27 PM Author     : Gliga            */
+
+#pagewrap {
+    padding: 0;
+    width: 100%;
+    height: 750px;
+    margin: auto;
+    color: black;
+    background: #f0efef;
+    text-align: center;
+    /*border: 1pt solid yellow;*/
+    font-family: Calibri;
+    overflow: hidden;}
+
+#pagewrap h1 {
+    color:black;
+    font-size: 20pt;
+    font-weight:bold;}
+
+#pagewrap h3, #pagewrap h3 i {
+    color:black;
+    font-size: 15pt;
+    font-weight:bold;
+    padding-top:5px}
+
+#pagewrap h4 {
+    color:#00AFEF;
+    font-size: 14pt;
+    font-weight:bold;}
+
+#pagewrap h5 {
+    color:#00AFEF;
+    font-size: 10pt;
+    font-weight:bold;}
+
+#title-page {
+    /*border: 1pt solid white;*/
+    background: #00AFEF;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top:5px;}
+
+/* mala slika kontakta */
+.contact-icon-image {
+    background-image: url(../img/contact/contact.png);
+    width: 50px;
+    height: 50px;
+}
+
+#left, #middle, #right{
+    border:1pt solid blue;
+    display:inline-block; }
+
+#left {
+    background: #333;
+    width: 300px;
+    text-align: left;
+    height: 300px;
+    float:left;
+    margin:50px;
+    padding:50px; }
+
+#left p a:hover, #left p a:focus {
+    opacity: .65;
+    padding-left: 5px;}
+
+
+#middle {
+    background: #333;
+    width: auto; /* Account for margins + border values */
+    text-align: center;    
+    height: 300px;
+    margin: 50px;
+}
+
+#right {
+    background: #333;
+    width: 300px;
+    text-align: right;
+    height: 300px;
+    float:right;
+    margin: 50px;
+    padding: 50px;}
+
+#right p a:hover, #right p a:focus {
+    opacity: .65;
+    padding-right: 5px;}
+
+#google-map {
+    background: #00AFEF;
+    clear: both;
+    /*border: 1pt solid white;*/
+    width: 100%;
+    height: 250px;
+    text-align-last: center;}
+
+#google-map #map {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    border:1px solid yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* for 980px or less */
+@media screen and (max-width: 980px) {
+	
+	#pagewrap {
+            width: 94%;
+	}
+	#left {
+            width: 41%;
+            padding: 1% 4%;
+	}
+	#middle {
+            width: 41%;
+            padding: 1% 4%;
+            margin: 0px 0px 5px 5px;
+            float: right;
+	}
+	
+	#right {
+            clear: both;
+            padding: 1% 4%;
+            width: auto;
+            float: none;
+	}
+
+	#title-page, #google-map {
+            padding: 1% 4%;
+	}
+}
+
+/* for 700px or less */
+@media screen and (max-width: 600px) {
+
+	#left {
+            width: auto;
+            float: none;
+	}
+	
+	#middle {
+            width: auto;
+            float: none;
+	}
+	
+	#right {
+            width: auto;
+            float: none;
+	}
+
+}
+
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+
+	#title-page {
+		height: auto;
+	}
+	h1 {
+		font-size: 2em;
+	}
+        	#left {
+            width: auto;
+            float: none;
+	}
+	
+	#middle {
+            width: auto;
+            float: none;
+	}
+	
+	#right {
+            width: auto;
+            float: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+#contact-form input[type="name"],
+#contact-form input[type="email"],
+#contact-form input[type="phone"],
+#contact-form textarea,
+#contact-form button[type="submit"] {
+	font:400 12px/12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#contact-form {
+	text-shadow:0 1px 0 #FFF;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	background:#F9F9F9;
+	padding:25px;
+}
+#contact-form h3 {
+	color:#991D57;
+	display:block;
+	font-size:28px;
+}
+#contact-form h4 {
+	margin:5px 0 15px;
+	display:block;
+	font-size:13px;
+}
+#contact-form label span {
+	cursor:pointer;
+	color:#991D57;
+	display:block;
+	margin:5px 0;
+	font-weight:900;
+}
+#contact-form input[type="name"],
+#contact-form input[type="email"],
+#contact-form input[type="phone"],
+#contact-form textarea {
+	width:100%;
+	box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+	-webkit-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+	-moz-box-shadow:inset 0 1px 2px #DDD, 0 1px 0 #FFF;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	border-radius:5px;
+}
+#contact-form input[type="name"]:hover,
+#contact-form input[type="email"]:hover,
+#contact-form input[type="phone"]:hover,
+#contact-form textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+#contact-form textarea {
+	height:100px;
+	max-width:100%;
+}
+#contact-form button[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#991D57;
+	background-image:linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+	background-image:-moz-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+	background-image:-webkit-linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	border-radius:5px;
+}
+#contact-form button[type="submit"]:hover {
+	background-image:linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+	background-image:-moz-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+	background-image:-webkit-linear-gradient(bottom, #9C215A 0%, #A82767 52%);
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+#contact-form button[type="submit"]:active {
+	box-shadow:inset 0 1px 3px rgba(0,0,0,0.5);
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}
+::-webkit-input-placeholder {
+    color:#888;
+}
+:-moz-placeholder {
+    color:#888;
+}
+::-moz-placeholder {
+    color:#888;
+}
+:-ms-input-placeholder {
+    color:#888;
+}
+
+*/
